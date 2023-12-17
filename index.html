@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Счетчик слов - онлайн инструмент, подсчитывающий слова, символы, предложения, строки и абзацы в реальном времени, обеспечивая легкость отслеживания различных элементов.">
     <link href="https://prathyoush.github.io/word-counter/" rel="canonical" />
-
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <h1>счетчик слов</h1>
@@ -21,35 +21,6 @@
         <p><strong>Количество абзацев:</strong> <span id="paragraphCount">0</span></p>
     </div>
 
-    <script>
-        const textarea = document.getElementById('inputText');
-
-        textarea.addEventListener('input', function () {
-            updateCounts(this.value);
-        });
-
-        function updateCounts(text) {
-            // Word count with Unicode support
-            const wordCount = text.match(/\p{L}+/gu) ? text.match(/\p{L}+/gu).length : 0;
-
-            // Character count
-            const charCount = text.length;
-
-            // Sentence count with Unicode support
-            const sentenceCount = text.split(/[\.\?!]/u).filter(Boolean).length;
-
-            // Line count
-            const lineCount = text.split('\n').filter(Boolean).length;
-
-            // Paragraph count
-            const paragraphCount = text.split('\n\n').filter(Boolean).length;
-
-            document.getElementById('wordCount').textContent = wordCount;
-            document.getElementById('charCount').textContent = charCount;
-            document.getElementById('sentenceCount').textContent = sentenceCount;
-            document.getElementById('lineCount').textContent = lineCount;
-            document.getElementById('paragraphCount').textContent = paragraphCount;
-        }
-    </script>
+    <script src="/script.js"></script>
 </body>
 </html>
